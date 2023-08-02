@@ -3,7 +3,7 @@ import { configureChains, createConfig } from 'wagmi'
 import { arbitrum, mainnet, polygon } from 'wagmi/chains'
 
 export const chains = [arbitrum, mainnet, polygon]
-export const projectId = '497499be6d14a6f6f92aed30dc94bd71'
+export const projectId = process.env.NEXT_PUBLIC_PROJECT_ID
 
 const { publicClient } = configureChains(chains, [w3mProvider({ projectId })])
 export const wagmiConfig = createConfig({
